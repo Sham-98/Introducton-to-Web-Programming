@@ -2,31 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Maker</title>
-    <script src="js/music-maker.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Music Maker</h1>
-    <button id="play">Play</button>
-    <input type="file" id="input-sample" name="input-sample" accept="audio/*">
-    <button id="upload">Add new sample</button>
-    <br>
+    <div class="header">
+        <h1>Music Maker</h1>
+    </div>
 
-    <input type="radio" id="track1" name="track" value="0" checked>
-    <label for="track1">Track 1</label><br>
-    <input type="radio" id="track2" name="track" value="1">
-    <label for="track2">Track 2</label><br>
-    <input type="radio" id="track3" name="track" value="2">
-    <label for="track3">Track 3</label><br>
-    <input type="radio" id="track4" name="track" value="3">
-    <label for="track4">Track 4</label><br>
+    <div class="container">
+        <div class="controls" id="addButtons">
+            <button class="instrument" id="bass" data-id="0" draggable="true">Bass</button>
+            <button class="instrument" id="drum" data-id="1" draggable="true">Drum</button>
+            <button class="instrument" id="piano" data-id="2" draggable="true">Piano</button>
+            <button class="instrument" id="strange-beat" data-id="3" draggable="true">Strange Beat</button>
+            <button class="instrument" id="violin" data-id="4" draggable="true">Violin</button>
+            <button class="instrument" id="oud" data-id="5" draggable="true">Oud</button>
+            <button class="instrument" id="oud-ney" data-id="6" draggable="true">Oud & Ney</button>
+        </div>
 
-    <div id="addButtons"></div>
+        <div class="tracks">
+            <div class="track" id="track1">    
+                <div class="track-content"></div>
+                <button class="track-control play" id="play1">▶</button>
+                <button class="track-control stop" id="stop1">■</button>
+                <div class="volume-control"> 
+                    <span>Volume</span>
+                    <input type="range" min="0" max="100" value="100" class="volume-control" id="volume1">
+                    <span id="volume-value1">100</span>
+                </div>
+            </div>
 
-    <div id="tracks"></div>
 
-    
+            <div class="track" id="track2">
+                <div class="track-content"></div>
+                <button class="track-control play" id="play2">▶</button>
+                <button class="track-control stop" id="stop2">■</button>
+                <div class="volume-control"> 
+                    <span>Volume</span>
+                    <input type="range" min="0" max="100" value="100" class="volume-control" id="volume2">
+                    <span id="volume-value2">100</span>
+                </div>
+            </div>
+
+            <div class="track" id="track3">
+                <div class="track-content"></div>
+                <button class="track-control play" id="play3">▶</button>
+                <button class="track-control stop" id="stop3">■</button>
+                <div class="volume-control"> 
+                    <span>Volume</span>
+                    <input type="range" min="0" max="100" value="100" class="volume-control" id="volume3">
+                    <span id="volume-value3">100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="controls-row">
+            <div class="control-group">
+                <button class="control-button circle" id="playback-control">▶</button>
+                <span>Play All</span>
+            </div>
+            <div class="control-group">
+                <button class="control-button circle" id="record-control"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-mic-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 1a2 2 0 0 0-2 2v6a2 2 0 0 0 4 0V3a2 2 0 0 0-2-2zM5 8V3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0z"/>
+                    <path d="M10 8a.5.5 0 0 0-1 0v2a2 2 0 1 1-4 0V8a.5.5 0 0 0-1 0v2a3 3 0 0 0 6 0V8z"/>
+                    <path d="M6.5 10.5a.5.5 0 0 0-.5.5v1h4v-1a.5.5 0 0 0-1 0v1h-2v-1a.5.5 0 0 0-.5-.5z"/>
+                </svg>
+            </button>
+                <span>Record</span>
+            </div>
+        
+            <div class="control-group">
+                <button class="control-button circle" id="save-control">↓</button>
+                <span>Download</span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
