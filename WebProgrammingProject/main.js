@@ -198,19 +198,7 @@ for (let i = 0; i < 3; i++){
             }
         });
     });
-    /*
-                if (trackAudio[index]){
-                    trackAudio[index].forEach(audio => audio.pause());
-                }
-                trackAudio[index] = audioElements[index].map(audio => {
-                    audio.currentTime = 0;
-                    audio.play();
-                    return audio;
-                })
-            }
-        });
-    });
-*/
+  
     const micButton = document.getElementById('record-control');
     micButton.addEventListener('click', async () => {
         if (!audioContext) {
@@ -262,10 +250,7 @@ for (let i = 0; i < 3; i++){
     document.getElementById('save-control').addEventListener('click', async() => {
         const offlineContext = new OfflineAudioContext(2, audioContext.sampleRate * track_duration, audioContext.sampleRate);
         
-       /* if (!recordedChunks.length) {
-            alert('No recording available.');
-            return;
-        }*/
+
 
 
         // Load and decode all audio samples
