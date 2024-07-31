@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const audioElements = [[], [], []];
     const trackAudio = [null, null, null];
     const audioContext =new(window.AudioContext || window.webkitAudioContext)();
-    ;
     let mediaRecorder = null;
     let recordedChunks = [];
     let recordingStream = null;
